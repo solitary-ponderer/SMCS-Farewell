@@ -1,0 +1,14 @@
+@import url('nav.css');
+
+/* About Page Specific Styling */
+main {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    margin: 100px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    line-height: 1.6;
+}

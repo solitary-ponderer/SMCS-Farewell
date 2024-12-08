@@ -1,10 +1,10 @@
-// JavaScript to track mouse movement and adjust background brightness
+//Mouse movement
 document.addEventListener("mousemove", (event) => {
-    // Get the mouse coordinates relative to the viewport
+    // Collecting cursor coordinate
     const x = event.clientX / window.innerWidth;
     const y = event.clientY / window.innerHeight;
 
-    // Update the CSS variables --x and --y for the radial gradient in CSS
+    // Updating the co ordinates
     document.body.style.setProperty("--x", `${x * 100}%`);
     document.body.style.setProperty("--y", `${y * 100}%`);
 });
