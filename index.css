@@ -192,37 +192,70 @@ footer p {
 }
 
 /* Improved Mobile Responsiveness - index.css */
+/* Mobile-specific Styles */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+    .nav-bar ul {
+        flex-direction: row; /* Keep navigation horizontal */
+        justify-content: center;
+        gap: 20px; /* Increased gap between links */
+    }
+
+    .nav-bar .icon img {
+        height: 25px; /* Adjust icon size for mobile */
+        width: 30px;
+    }
+
+    /* Adjust Navbar Links (Home, About, Credits) */
+    .nav-bar ul li a {
+        font-size: 1em; /* Reduced font size for better fitting */
+        padding: 8px 18px; /* Adjusted padding to give more space */
+    }
+
+    /* Reduced header size for mobile */
+    header h1 {
+        font-size: 1.8em; /* Make header smaller */
+        margin: 0;
+    }
+
+    main p {
+        font-size: 1.1em; /* Smaller font size for mobile */
+        padding: 8px 12px; /* Adjust padding for better fitting */
+    }
+
+    .options-row {
+        flex-direction: row; /* Keep buttons side by side */
         gap: 10px;
     }
 
-    nav img {
-        height: 25px; /* Smaller icon for mobile */
-    }
-
-    .buttons-container {
-        flex-direction: column;
-        gap: 15px; /* Increase spacing between buttons */
+    .button {
+        padding: 12px 25px; /* Reduced padding for mobile buttons */
+        font-size: 1em; /* Smaller font size */
     }
 
     .principal-button {
-        width: 90%; /* Wider button for small screens */
+        padding: 18px 50px; /* Adjusted for better visibility */
+        font-size: 1.1em; /* Slightly smaller font size */
     }
 
-    .student-button, .teacher-button {
-        width: 90%; /* Buttons span most of the screen width */
-    }
-
-    .bright-circle {
-        width: 120px; /* Smaller circle */
-        height: 120px;
-    }
-
+    /* Ensure footer is always visible on mobile */
     footer {
-        font-size: 0.8em;
-        padding: 10px;
+        position: relative; /* Changed from fixed to relative */
+        padding: 15px 10px; /* Adjusted padding */
+        font-size: 0.9em; /* Smaller font size for footer */
+        margin-top: 20px; /* Space between footer and main content */
+    }
+
+    /* Remove the bright circle and increase black box transparency */
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7); /* Increased transparency of black background */
+        z-index: -1;
+        pointer-events: none;
+        transition: background 0.1s ease;
     }
 }

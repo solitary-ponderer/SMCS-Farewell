@@ -16,3 +16,4 @@ if (!isMobile) {
     document.body.style.setProperty("--x", "50%");
     document.body.style.setProperty("--y", "50%");
 }
+
