@@ -191,40 +191,34 @@ footer p {
     margin: 0;
 }
 
-/* Improved Mobile Responsiveness */
+/* Improved Mobile Responsiveness - index.css */
 @media (max-width: 768px) {
-    body {
-        overflow: auto; /* Allow scrolling */
-        background-size: contain; /* Ensure background fits well */
-    }
-
-    header h1 {
-        font-size: 2em; /* Adjust heading size */
-    }
-
-    main p {
-        font-size: 1.2em;
-        padding: 10px 15px;
-    }
-
-    .button {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
-
-    .options-row {
+    nav ul {
         flex-direction: column;
-        gap: 15px;
+        align-items: center;
+        gap: 10px;
     }
 
-    .nav-bar ul {
+    nav img {
+        height: 25px; /* Smaller icon for mobile */
+    }
+
+    .buttons-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 15px; /* Increase spacing between buttons */
     }
 
-    .nav-bar ul li a {
-        font-size: 1em;
-        padding: 10px;
+    .principal-button {
+        width: 90%; /* Wider button for small screens */
+    }
+
+    .student-button, .teacher-button {
+        width: 90%; /* Buttons span most of the screen width */
+    }
+
+    .bright-circle {
+        width: 120px; /* Smaller circle */
+        height: 120px;
     }
 
     footer {
