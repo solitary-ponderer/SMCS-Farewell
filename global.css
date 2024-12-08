@@ -123,3 +123,25 @@ footer {
 footer p {
     margin: 0;
 }
+
+/* Improved Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        background-size: cover; /* Ensure background looks good */
+    }
+
+    .nav-bar ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-bar ul li a {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 0.8em;
+        padding: 10px;
+    }
+}
