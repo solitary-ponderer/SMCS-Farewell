@@ -376,9 +376,15 @@ footer p {
         gap: 20px;
     }
 
+    /* Navbar Party Icon */
+     .nav-bar .icon {
+        position: absolute; /* Position it relative to the navbar */
+        left: calc(50% - 175px); /* Adjust spacing from the center */
+    }
+
     .nav-bar .icon img {
-        height: 25px;
-        width: 30px;
+        height: 25px; /* Adjust size for smaller screens */
+        width: 25px; /* Ensure proper proportions */
     }
 
     /* Adjust Navbar Links (Home, About, Credits) */
