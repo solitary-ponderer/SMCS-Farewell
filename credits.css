@@ -1,4 +1,4 @@
-@import url('nav.css');
+@import url('global.css');
 
 /* Credits Page Specific Styling */
 main {
@@ -26,33 +26,33 @@ main li {
 /* Mobile-specific Styles */
 @media (max-width: 768px) {
     .nav-bar ul {
-        flex-direction: row; /* Keep navigation horizontal */
+        flex-direction: row;
         justify-content: center;
-        gap: 20px; /* Increased gap between links */
+        gap: 20px;
     }
 
     .nav-bar .icon img {
-        height: 10px; /* Adjust icon size for mobile */
+        height: 10px;
         width: 15px;
     }
 
     /* Adjust Navbar Links (Home, About, Credits) */
     .nav-bar ul li a {
-        font-size: 1em; /* Reduced font size for better fitting */
-        padding: 8px 18px; /* Adjusted padding to give more space */
+        font-size: 1em;
+        padding: 8px 18px;
     }
 
     header h1 {
-        font-size: 1.6em; /* Slightly smaller header font size */
+        font-size: 1.6em;
     }
 
     main {
         flex: 0;
-        padding: 5px; /* Reduced padding */
+        padding: 5px;
         text-align: center;
         background: white;
-        margin: 50px auto; /* Reduced margin to make the box closer to the top */
-        max-width: 80%; /* Reduced max-width to make the box smaller */
+        margin: 50px auto;
+        max-width: 80%;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         line-height: 1.5;
@@ -60,8 +60,8 @@ main li {
 
     /* Ensuring footer visibility on mobile */
     footer {
-        font-size: 0.9em; /* Adjusted footer font size */
-        margin-top: 20px; /* Space between footer and content */
+        font-size: 0.9em;
+        margin-top: 20px;
     }
 
     /* Remove the bright circle and increase black box transparency */
@@ -72,7 +72,7 @@ main li {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.7); /* Increased transparency of black background */
+        background: rgba(0, 0, 0, 0.7);
         z-index: -1;
         pointer-events: none;
         transition: background 0.1s ease;

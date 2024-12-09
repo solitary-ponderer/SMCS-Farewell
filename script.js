@@ -2,7 +2,7 @@
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 if (!isMobile) {
-    //Mouse movement for PC
+    // Mouse movement effect for desktop
     document.addEventListener("mousemove", (event) => {
         const x = event.clientX / window.innerWidth;
         const y = event.clientY / window.innerHeight;
@@ -17,3 +17,13 @@ if (!isMobile) {
     document.body.style.setProperty("--y", "50%");
 }
 
+// Ensure script runs after DOM content is loaded
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    // Add event listener for toggling the sidebar
+    menuToggle.addEventListener('click', function () {
+        sidebar.classList.toggle('open'); // Toggle visibility
+    });
+});
