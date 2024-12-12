@@ -256,6 +256,72 @@ body::before {
     75% { transform: translateX(5px); }
 }
 
+/* Dropdown Specific Styling */
+.sidebar ul li.dropdown {
+    position: relative;
+}
+
+.sidebar ul li .dropdown-toggle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px; /* Increased gap between triangle and icon */
+    padding-left: 10px; /* Shift the entire content slightly to the right */
+}
+
+.sidebar ul li .triangle {
+    font-size: 0.8em;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar ul li.dropdown.open .triangle {
+    transform: rotate(90deg);
+}
+
+/* Dropdown Menu with Animation */
+.sidebar ul li .dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 20px; /* Add space between dropdown and options */
+    max-height: 0; /* Initially hidden */
+    overflow: hidden;
+    opacity: 0; /* Initially invisible */
+    transform: translateY(-10px); /* Slide slightly upwards */
+    transition: all 0.4s ease-in-out; /* Smooth animation */
+}
+
+.sidebar ul li.dropdown.open .dropdown-menu {
+    max-height: 200px; /* Enough height for the content */
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide into place */
+}
+
+/* Dropdown Menu Items */
+.sidebar ul li .dropdown-menu li {
+    margin: 10px 0; /* Space between dropdown items */
+}
+
+.sidebar ul li .dropdown-menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    background: rgba(0, 0, 0, 0.6); /* Add individual black background */
+    border-radius: 5px; /* Optional: Rounded corners */
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul li .dropdown-menu li a:hover {
+    background: #ff9800; /* Highlight background on hover */
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.8);
+}
+
+.sidebar ul li .dropdown-menu li a.indented {
+    padding-left: 30px; /* Additional indentation for dropdown items */
+}
+
 /* Header Fix: Add Margin to Separate Header from Navbar */
 header {
     margin-top: 70px;

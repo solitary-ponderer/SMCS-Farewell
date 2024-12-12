@@ -1,3 +1,12 @@
+//Sidebar drop down Menu
+document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        const parent = this.closest('.dropdown');
+        parent.classList.toggle('open');
+    });
+});
+
 // Check if the device is mobile
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
@@ -127,3 +136,38 @@ document.addEventListener('DOMContentLoaded', () => {
         messageContainer.classList.remove('hidden');
     });
 });
+
+// Memories Tab
+let currentIndex = []; // Tracks the current image for each section
+
+document.querySelectorAll('.slides').forEach((slides, index) => {
+    currentIndex[index] = 0; // Initialize all sections to the first slide
+    showSlide(index, 0); // Display the first slide for each section
+});
+
+function showSlide(sectionIndex, index) {
+    const slides = document.querySelectorAll('.slides')[sectionIndex];
+    const totalSlides = slides.children.length;
+
+    // Wrap around slides
+    if (index >= totalSlides) {
+        currentIndex[sectionIndex] = 0;
+    } else if (index < 0) {
+        currentIndex[sectionIndex] = totalSlides - 1;
+    } else {
+        currentIndex[sectionIndex] = index;
+    }
+
+    const slideWidth = slides.parentElement.offsetWidth; // Get container width
+    const offset = -currentIndex[sectionIndex] * slideWidth;
+
+    slides.style.transform = `translateX(${offset}px)`;
+}
+
+function nextSlide(sectionIndex) {
+    showSlide(sectionIndex, currentIndex[sectionIndex] + 1);
+}
+
+function prevSlide(sectionIndex) {
+    showSlide(sectionIndex, currentIndex[sectionIndex] - 1);
+}

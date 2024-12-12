@@ -1,3 +1,29 @@
+/* Responsive Bg */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(201, 96, 64);
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.85) 25%);
+    z-index: -1;
+    pointer-events: none;
+    transition: background 0.1s ease;
+}
+
 /* Navbar Styling */
 .nav-bar {
     position: fixed;
@@ -228,33 +254,84 @@
     75% { transform: translateX(5px); }
 }
 
-/* General Body Styling */
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #fdf5c9;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    color: #000000;
+/* Dropdown Specific Styling */
+.sidebar ul li.dropdown {
+    position: relative;
 }
 
+.sidebar ul li .dropdown-toggle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px; /* Increased gap between triangle and icon */
+    padding-left: 10px; /* Shift the entire content slightly to the right */
+}
+
+.sidebar ul li .triangle {
+    font-size: 0.8em;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar ul li.dropdown.open .triangle {
+    transform: rotate(90deg);
+}
+
+/* Dropdown Menu with Animation */
+.sidebar ul li .dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 20px; /* Add space between dropdown and options */
+    max-height: 0; /* Initially hidden */
+    overflow: hidden;
+    opacity: 0; /* Initially invisible */
+    transform: translateY(-10px); /* Slide slightly upwards */
+    transition: all 0.4s ease-in-out; /* Smooth animation */
+}
+
+.sidebar ul li.dropdown.open .dropdown-menu {
+    max-height: 200px; /* Enough height for the content */
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide into place */
+}
+
+/* Dropdown Menu Items */
+.sidebar ul li .dropdown-menu li {
+    margin: 10px 0; /* Space between dropdown items */
+}
+
+.sidebar ul li .dropdown-menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    background: rgba(0, 0, 0, 0.6); /* Add individual black background */
+    border-radius: 5px; /* Optional: Rounded corners */
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul li .dropdown-menu li a:hover {
+    background: #ff9800; /* Highlight background on hover */
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.8);
+}
+
+.sidebar ul li .dropdown-menu li a.indented {
+    padding-left: 30px; /* Additional indentation for dropdown items */
+}
+
+/* Header Styling */
 header {
-    margin-top: 70px;
     text-align: center;
-    padding: 20px 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    padding: 80px 20px 20px;
     background-color: #7c3f00;
     color: #f0f0f0;
     font-size: 2rem;  /* Reduced font size */
     font-weight: bold;
-    z-index: 1000;
     border-bottom: 5px solid #000000;
     animation: wave 5s infinite ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 @keyframes wave {
@@ -266,28 +343,33 @@ header {
     }
 }
 
+/* Content Box Styling */
 main {
-    margin: auto;
-    max-width: 700px;  /* Reduced the max-width */
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin-top: 80px; /* Adjusted for header */
-    gap: 20px;
+    overflow: auto; /* Enables scrolling if content overflows */
+    flex: 1;
+    margin: 20px auto;
     padding: 20px;
+    max-width: 1000px;
+    line-height: 1.6;
+
+    background-color: #7c3f00;
+    border: 4px solid #000000;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(58, 53, 53);
 }
 
-/* Content Box */
-.content-box {
-    width: 100%;
-    max-width: 660px;  /* Reduced the width */
-    padding: 15px;
+.content-box{
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1000px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
     background-color: #7c3f00;
     border: 4px solid #f0f0f0;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(250, 250, 250, 1);
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
 }
 
 /* Left Section: Poem */
@@ -302,7 +384,7 @@ main {
 }
 
 .left-section h2 {
-    font-size: 1rem;  /* Reduced font size */
+    font-size: 2rem;  /* Reduced font size */
     text-align: left;
     margin-bottom: 15px;
     border-bottom: 3px dotted #f0f0f0;
@@ -310,7 +392,7 @@ main {
 }
 
 .left-section p {
-    font-size: 0.85rem;  /* Reduced font size */
+    font-size: 1rem;  /* Reduced font size */
     line-height: 1.4;
     text-align: left;
 }
@@ -327,7 +409,7 @@ main {
 }
 
 .right-section h2 {
-    font-size: 1rem;  /* Reduced font size */
+    font-size: 1.5rem;  /* Reduced font size */
     text-align: left;
     margin-bottom: 15px;
     border-bottom: 3px dotted #f0f0f0;
@@ -335,7 +417,7 @@ main {
 }
 
 .right-section p {
-    font-size: 0.7rem;  /* Reduced font size */
+    font-size: 0.9rem;  /* Reduced font size */
     line-height: 1.4;
     text-align: left;
     margin-bottom: 20px;
@@ -345,6 +427,8 @@ main {
 .divider {
     width: 3px;
     background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(250, 250, 250, 0.5);
 }
 
 /* Video Container */
@@ -370,131 +454,88 @@ main {
     border: none;
 }
 
-/* CSS for Mobile Devices */
+/* Improved Mobile Responsiveness - credits.css */
+/* Mobile-specific Styles */
 @media (max-width: 768px) {
-    header {
-        font-size: 1.2rem;
-        padding: 10px;
-        animation: wave 5s infinite ease-in-out;
+    .nav-bar ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* Navbar Party Icon */
+    .nav-bar .icon {
+        position: absolute;
+        left: calc(50% - 175px); /* Adjust spacing from the center */
+    }
+
+    .nav-bar .icon img {
+        height: 25px; /* Adjust size for smaller screens */
+        width: 25px;
+    }
+
+    /* Adjust Navbar Links (Home, About, Credits) */
+    .nav-bar ul li a {
+        font-size: 1em;
+        padding: 8px 18px;
+    }
+
+    header h1 {
+        font-size: 1.6em;
     }
 
     main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: auto;
+        overflow: auto; /* Enables scrolling if content overflows */
+        margin: 20px auto;
         padding: 20px;
+        max-width: 1000px;
+        line-height: 1.6;
+        background-color: #7c3f00;
+        border: 4px solid #000000;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgb(58, 53, 53);
     }
 
     .content-box {
-        flex-direction: column;
-        width: 100%;
-        max-width: 100%;
-        background-color: #7c3f00;
-        border-radius: 10px;
-    }
-
-    .left-section {
-        width: 100%;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .divider {
-        display: none;
-    }
-
-    .video-container {
-        margin-top: 15px;
-        width: 100%;
-        border: 2px solid #f0f0f0;
-    }
-
-    .hidden {
-        display: none;
-    }
-}
-
-/* Bubbles animation */
-.bubble {
-    position: absolute;
-    bottom: -100px;
-    width: 50px;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    animation: bubbleAnimation 10s infinite ease-in-out;
-}
-
-@keyframes bubbleAnimation {
-    0% {
-        transform: translateX(0) translateY(0);
-        opacity: 0.7;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(calc(100vw - 50px)) translateY(-100vh);
-        opacity: 0;
-    }
-}
-
-/* CSS for Mobile Devices */
-@media (max-width: 768px) {
-    header {
-        font-size: 1.2rem;  /* Smaller header font size */
-        padding: 10px;  /* Reduced padding */
-        animation: wave 5s infinite ease-in-out;
-    }
-
-    main {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;  /* Align items to the top */
-        height: auto;
+        flex-direction: column; /* Stack sections vertically */
+        margin: 20px auto;
         padding: 20px;
-        overflow-y: auto;  /* Allow vertical scrolling */
-    }
-
-    .content-box {
-        flex-direction: column;  /* Stack items vertically */
-        width: 100%;
-        max-width: 100%;
+        max-width: 1000px;
+        line-height: 1.6;
         background-color: #7c3f00;
-        border-radius: 10px;
-        padding: 15px;
+        border: 4px solid #f0f0f0;
+        border-radius: 15px;
         box-shadow: 0 4px 8px rgba(250, 250, 250, 1);
-        overflow-y: auto;  /* Enable scrollable content */
-        max-height: 90vh;  /* Prevents the box from taking up the full screen */
     }
 
     .left-section, .right-section {
-        width: 100%;  /* Full width for mobile */
-        padding: 10px;
-        text-align: left;  /* Align text to the left for better readability */
-    }
-
-    .left-section h2, .right-section h2 {
-        font-size: 1rem;  /* Adjusted font size */
+        width: 100%; /* Make sections full-width */
+        padding: 10px; /* Adjust padding as needed */
+        border-right: none; /* Remove any border-right styles */
         text-align: left;
     }
 
-    .left-section p, .right-section p {
-        font-size: 0.85rem;  /* Adjusted font size */
-    }
-
-    .divider {
-        display: none;  /* Hide divider on mobile */
-    }
-
     .video-container {
-        margin-top: 15px;
-        width: 100%;
-        border: 2px solid #f0f0f0;
+        margin: 15px 0; /* Adjust margin for better spacing */
     }
 
-    .hidden {
-        display: none;  /* Hide hidden elements on mobile */
+    /* Ensuring footer visibility on mobile */
+    footer {
+        font-size: 0.9em;
+        margin-top: 20px;
+    }
+
+    /* Remove the bright circle and increase black box transparency */
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+        pointer-events: none;
+        transition: background 0.1s ease;
     }
 }

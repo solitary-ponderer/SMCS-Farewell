@@ -7,6 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="global.css">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="SMCS Farewell" />
+    <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
     <header>
@@ -38,11 +44,27 @@
                         <span>About</span>
                     </a>
                 </li>
-                <li>
-                    <a href="credits.html">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        <span class="triangle">&#9654;</span>
                         <img src="thanks.png" alt="Thanks Icon" class="icon">
-                        <span>Credits</span>
+                        <span>Memories</span>
                     </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="memoriesA.html" class="indented">Section A Memories</a></li>
+                        <li><a href="memoriesB.html" class="indented">Section B Memories</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        <span class="triangle">&#9654;</span>
+                        <img src="thanks.png" alt="Thanks Icon" class="icon">
+                        <span>Farewell 2025</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="celeb.html" class="indented">Farewell Celebration</a></li>
+                        <li><a href="BTS.html" class="indented">Behind The Scenes</a></li>
+                    </ul>
                 </li>
             </ul>
         </aside>    
