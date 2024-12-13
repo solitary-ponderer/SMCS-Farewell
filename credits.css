@@ -59,7 +59,6 @@ main li {
         background: white;
         margin: 50px auto;
         max-width: 80%;
-        text-shadow: 2px 2px #000000;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         line-height: 1.5;

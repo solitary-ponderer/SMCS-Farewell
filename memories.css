@@ -445,17 +445,16 @@ footer {
         flex-direction: row;
         justify-content: center;
         gap: 20px;
+        height: 5vh;
     }
 
     /* Navbar Party Icon */
-     .nav-bar .icon {
-        position: absolute; /* Position it relative to the navbar */
-        left: calc(50% - 175px); /* Adjust spacing from the center */
+    .nav-bar .icon {
+        display: none;
     }
 
     .nav-bar .icon img {
-        height: 25px; /* Adjust size for smaller screens */
-        width: 25px; /* Ensure proper proportions */
+        display: none;
     }
 
     /* Adjust Navbar Links (Home, About, Credits) */

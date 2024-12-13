@@ -521,7 +521,6 @@ main {
     }
     
     body {
-        font-family: 'Dancing Script', cursive;
         background-color: #fdf5c9;
         color: #f0f0f0;
         display: flex;
