@@ -368,6 +368,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: auto;
     color: #000000;
 }
 
@@ -385,24 +386,28 @@ header {
     color: #f0f0f0;
     font-size: 2.5rem;
     font-weight: bold;
-    z-index: 1000;
     border-bottom: 5px solid #000000;
 }
 main {
-    min-height: 70vh;
+    height: 60vh;
     margin: auto;
     max-width: 800px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin: 1px auto;
     position: relative;
     gap: 20px;
+}
+
+#messageContainer{
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 30vh;
 }
 
 /* Content Box */
 .content-box {
     width: 700px;
-    height: 500px;
+    height: 75vh;
     padding: 25px;
     background-color: #7c3f00;
     border: 4px solid #f0f0f0;
@@ -497,6 +502,23 @@ main {
 
 /* CSS for Mobile Devices */
 @media (max-width: 768px) {
+
+    .nav-bar ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        height: 5vh;
+    }
+
+    /* Navbar Party Icon */
+    .nav-bar .icon {
+        display: none;
+    }
+
+    .nav-bar .icon img {
+        display: none;
+    }
+    
     body {
         font-family: 'Dancing Script', cursive;
         background-color: #fdf5c9;
@@ -509,15 +531,6 @@ main {
         text-shadow: 2px 2px #000000;
     }
 
-    .container {
-        background-color: #7c3f00;
-        padding: 15px;
-        border-radius: 10px;
-        text-align: center;
-        border: 5px solid #f0f0f0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 1.2);
-        width: 90%;
-    }
 
     h1 {
         color: #f0f0f0;
@@ -581,7 +594,6 @@ main {
         font-size: 1.2rem;
         font-weight: bold;
         text-align: center;
-        z-index: 1000;
         animation: wave 5s infinite ease-in-out;
         border-bottom: 5px solid #000000;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -597,7 +609,14 @@ main {
         }
     }
 
+    #messageContainer{
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-top: 25vh;
+    }
+
     main {
+        overflow-y: auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -606,14 +625,14 @@ main {
     }
 
     .content-box {
+        overflow-y: auto;
         flex-direction: column;
         width: 100%;
-        max-width: 100%;
+        height: 50vh;
         background-color: #7c3f00;
         border-radius: 10px;
         box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.4);
         position: relative;
-        z-index: 2;
         border: 5px solid #f0f0f0;
     }
 
@@ -632,6 +651,27 @@ main {
     }
 
     .left-section p {
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .right-section {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .right-section h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 10px;
+        border-bottom: 3px dotted #f0f0f0;
+        padding-bottom: 5px;
+    }
+
+    .right-section p {
+        text-align: center;
         font-size: 1rem;
         line-height: 1.4;
     }
@@ -641,11 +681,7 @@ main {
     }
 
     .video-container {
-        margin-top: 15px;
-        width: 100%;
-        border: 2px solid #f0f0f0;
-        border-radius: 10px;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        margin: 1vw -5vw; /* Adjust margin for better spacing */
     }
 
     .hidden {

@@ -23,6 +23,7 @@ body {
     border-radius: 120%;
     animation: bubble 1s infinite ease-in-out;
     z-index: -1;
+    box-shadow: #000000 rgba(0, 0, 0, 1);
 }
 
 .bubble:nth-child(1) {

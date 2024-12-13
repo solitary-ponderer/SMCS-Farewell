@@ -298,8 +298,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #4cae4c, #7c3f00);
+    font-family: 'A', sans-serif;
+    background: linear-gradient(to right, #914800,#ffcb22);
     color: white;
     text-align: center;
     overflow-x: hidden;
@@ -309,7 +309,7 @@ body {
 header {
     padding: 40px;
     background-color: rgba(0, 0, 0, 0.6);
-    border-bottom: 3px solid #4cae4c;
+    border-bottom: 3px solid #ff9800;
     text-align: center;
     color: #f0f0f0;
     font-size: 2rem;  /* Reduced font size */
@@ -418,6 +418,7 @@ footer {
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
     transition: background-color 0.3s ease;
 }
 
@@ -427,6 +428,23 @@ footer {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+
+    .nav-bar ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        height: 5vh;
+    }
+
+    /* Navbar Party Icon */
+    .nav-bar .icon {
+        display: none;
+    }
+
+    .nav-bar .icon img {
+        display: none;
+    }
+
     .memory-section {
         display: flex;
         flex-direction: column; /* Stack elements vertically */

@@ -6,7 +6,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(201, 96, 64);
+    background-color: rgb(253, 194, 138);
     overflow: hidden;
     position: relative;
 }
@@ -461,23 +461,16 @@ main {
         flex-direction: row;
         justify-content: center;
         gap: 20px;
+        height: 5vh;
     }
 
     /* Navbar Party Icon */
     .nav-bar .icon {
-        position: absolute;
-        left: calc(50% - 175px); /* Adjust spacing from the center */
+        display: none;
     }
 
     .nav-bar .icon img {
-        height: 25px; /* Adjust size for smaller screens */
-        width: 25px;
-    }
-
-    /* Adjust Navbar Links (Home, About, Credits) */
-    .nav-bar ul li a {
-        font-size: 1em;
-        padding: 8px 18px;
+        display: none;
     }
 
     header h1 {
@@ -516,7 +509,7 @@ main {
     }
 
     .video-container {
-        margin: 15px 0; /* Adjust margin for better spacing */
+        margin: 2vw -2vw; /* Adjust margin for better spacing */
     }
 
     /* Ensuring footer visibility on mobile */
@@ -533,7 +526,7 @@ main {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0);
         z-index: -1;
         pointer-events: none;
         transition: background 0.1s ease;
