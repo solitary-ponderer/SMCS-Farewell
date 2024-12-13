@@ -350,18 +350,22 @@ header .subtitle {
 
 .text-container {
     flex: 1;
-    padding: 20px;
+    padding: 30px;
     text-align: left;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(to right, #914800,#ffcb22);
 }
 
 .text-container h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
+
 }
 
 .text-container p {
     font-size: 1.2rem;
     color: #ddd;
+    width: 45vw;
 }
 
 /* Photo Container */
@@ -371,16 +375,15 @@ header .subtitle {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    width: 80%; /* Adjust width as needed (e.g., 60%, 70%, etc.) */
-    max-width: 750px; /* Set a maximum width */
+    width: 100%; /* Adjust width as needed (e.g., 60%, 70%, etc.) */
+    max-width: 700px; /* Set a maximum width */
     max-height: 400px; /* Maintain a reasonable height limit */
     border-radius: 15px;
     margin: auto; /* Center the container horizontally */
     position: relative; /* Or absolute */
     left: -30px; /* Adjust this value to move it left */
+    border: 5px solid #ff9800;
 }
-
-
 
 /* Slides */
 .slides {
@@ -390,6 +393,15 @@ header .subtitle {
 }
 
 .slides img {
+    max-width: 100%; /* Ensure the image scales down if too wide */
+    max-height: 100%; /* Ensure the image scales down if too tall */
+    object-fit: cover; /* Crop the image to fill the container proportionally */
+    border-radius: 10px; /* Optional: rounded corners */
+    display: block; /* Ensure the image behaves like a block element */
+    margin: auto; /* Center the image horizontally */
+}
+
+.slides video {
     max-width: 100%; /* Ensure the image scales down if too wide */
     max-height: 100%; /* Ensure the image scales down if too tall */
     object-fit: cover; /* Crop the image to fill the container proportionally */
@@ -426,63 +438,84 @@ footer {
     background-color: #7c3f00;
 }
 
-/* Mobile Responsiveness */
+/* General Mobile Responsiveness */
 @media (max-width: 768px) {
-
+    /* Navbar Styling for Mobile */
     .nav-bar ul {
         flex-direction: row;
         justify-content: center;
         gap: 20px;
-        height: 5vh;
     }
 
     /* Navbar Party Icon */
-    .nav-bar .icon {
-        display: none;
+     .nav-bar .icon {
+        position: absolute; /* Position it relative to the navbar */
+        left: calc(50% - 175px); /* Adjust spacing from the center */
     }
 
     .nav-bar .icon img {
-        display: none;
+        height: 25px; /* Adjust size for smaller screens */
+        width: 25px; /* Ensure proper proportions */
+    }
+
+    /* Adjust Navbar Links (Home, About, Credits) */
+    .nav-bar ul li a {
+        font-size: 1em;
+        padding: 8px 18px;
     }
 
     .memory-section {
-        display: flex;
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center-align all content */
-        padding: 20px; /* Add padding around the section */
+        flex-direction: column; /* Stack the text and image vertically on smaller screens */
+        align-items: center; /* Center align the content */
     }
 
-    .text-container {
-        text-align: center; /* Center the text */
-        margin-bottom: 20px; /* Space below the text */
-        width: 100%; /* Take full width */
-    }
-
-    .photo-container {
-        width: calc(100% - 40px); /* Full width with padding */
-        max-width: 600px; /* Optional: limit max width */
-        margin-bottom: 20px; /* Spacing below photo */
-        display: flex;
-        justify-content: center;
+    .content-container {
+        flex-direction: column; /* Stack the content vertically */
         align-items: center;
     }
 
-    .photo-container img {
-        width: 100%; /* Image takes up full container width */
-        height: auto; /* Maintain aspect ratio */
-        border-radius: 10px; /* Rounded corners */
+    .text-container {
+        width: 80%; /* Adjust the width to fit the mobile screen */
+        padding: 20px;
+        text-align: center; /* Center the text on smaller screens */
     }
 
-    .show-images-btn {
-        padding: 12px 25px; /* Adjust padding for touch devices */
-        font-size: 1rem; /* Maintain button readability */
+    .photo-container {
+        width: 100%; /* Make the image container take up full width */
+        margin-top: 20px; /* Add some space between text and image */
+        left: 0; /* Remove any leftward position adjustments */
+        border: none; /* Remove the border */
     }
 
-    /* Adjustments for mobile responsiveness */
-    @media (max-width: 768px) {
-        header {
-            padding: 80px 20px 20px; /* Reduced padding for smaller screens */
-            margin-top: 60px; /* Maintain separation from navbar */
-        }
+    .text-container h2 {
+        font-size: 2rem; /* Adjust font size for mobile */
+    }
+
+    .text-container p {
+        font-size: 1rem; /* Adjust font size for mobile */
+        width: 100%; /* Let the paragraph take full width */
+        color: rgb(255, 255, 255);
     }
 }
+
+    /* Button Styling for Mobile */
+    .show-images-btn {
+        font-size: 1.1rem; /* Larger button text for touch devices */
+        padding: 12px 25px;
+    }
+
+    /* Header Styling */
+    header {
+        padding: 60px 20px; /* Adjust padding for smaller screens */
+        text-align: center;
+        font-size: 1.8rem; /* Smaller header size */
+    }
+
+    header h1 {
+        font-size: 3rem; /* Adjust title size */
+    }
+
+    header .subtitle {
+        font-size: 1.3rem; /* Adjust subtitle size */
+    }
+

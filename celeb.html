@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farewell Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./index.css">
+    <title>Memories</title>
+    <link rel="stylesheet" href="./BTS.css">
     <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="shortcut icon" href="./favicon.ico" />
@@ -14,6 +13,7 @@
     <link rel="manifest" href="./site.webmanifest" />
 </head>
 <body>
+
     <nav class="nav-bar">
         <div class="hamburger-menu" id="menuToggle">
             &#9776; <!-- Hamburger Icon -->
@@ -65,26 +65,41 @@
                 </ul>
             </li>
         </ul>
-    </aside>    
+    </aside>
 
     <header>
-        <div class="welcome-text">
-            <h1>Welcome to Farewell 2025!</h1>
-        </div>
+        <h1>Farewell Day</h1>
+        <p class="subtitle">A video that was made during the celebration. The page will be updated soon.</p>
     </header>
+
     <main>
-        <p>Please select an option:</p>
-        <div class="options">
-            <div class="options-row">
-                <a href="student.html" class="button">Student</a>
-                <a href="teacher.html" class="button">Teacher</a>
+        <!-- School Tour Image -->
+        <section class="memory-section">
+            <div class="content-container">
+                <div class="text-container">
+                    <h2>Farewell Photos</h2>
+                    <p>Last photos till you can enjoy life, once you step out of school you will always miss this [It's 3 a.m. so ignore any grammar error]</p>
+                    <button class="show-images-btn" onclick="nextSlide(0)">Next Image</button>
+                </div>
+                <div class="photo-container">
+                    <div class="slides" id="slider-0">
+                        <img src="img1.jpg" alt="Image 1" class="active">
+                        <img src="img2.jpg" alt="Image 2">
+                        <img src="img3.jpg" alt="Image 3">
+                    </div>
+                </div>
             </div>
-            <a href="principal.html" class="principal-button">The Respected Principal</a>
+        </section>
+        <div class="video-container">
+            <iframe id="farewellVideo" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
         </div>
     </main>
+
+
     <footer>
-        <p>© 2024-25™ Junior's Production</p>
+        <p>““O Skibiddi re...... Kaise bane Sigma, Kaisa hai Rizz mera, Fanum Tax....... Satav re.......””</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

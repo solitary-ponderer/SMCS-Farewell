@@ -2,6 +2,7 @@
 
 /* Credits Page Specific Styling */
 main {
+    overflow-y: auto;
     flex: 1;
     padding: 20px;
     background: white;
@@ -58,6 +59,7 @@ main li {
         background: white;
         margin: 50px auto;
         max-width: 80%;
+        text-shadow: 2px 2px #000000;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         line-height: 1.5;
@@ -77,7 +79,7 @@ main li {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.5);
         z-index: -1;
         pointer-events: none;
         transition: background 0.1s ease;
