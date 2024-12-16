@@ -5,21 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memories</title>
     <link rel="stylesheet" href="./memories.css">
-    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="shortcut icon" href="./favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="stylesheet" href="./popup.css">
+    
+    <link rel="icon" type="image/png" href="./Favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./Favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./Favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./Favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="SMCS Farewell" />
     <link rel="manifest" href="./site.webmanifest" />
 </head>
 <body>
+
+    <div id="popup2-container" class="pop2-container popup2-hidden">
+        <div class="popup2">
+            <h2>Disclaimer!</h2>
+            <p>The amount of photos may feel less to you. 
+                We are sorry for the inconvience, as we couldn't fetch proper photos relevent to the farewell.
+                <br>(Most of the photo's were not of the proper aspect-ratio being used, and the resolution was very low.)
+                 <br><br>Click "Close" to close the popup.</p>
+            
+            <button id="popup2-close" class="popup2-close">&#10006; Close</button>
+        </div>
+    </div>
+
 
     <nav class="nav-bar">
         <div class="hamburger-menu" id="menuToggle">
             &#9776; <!-- Hamburger Icon -->
         </div>
         <div class="icon">
-            <img src="party.png" alt="Party Icon">
+            <img src="./Memories/memory.png" alt="Memory Icon">
         </div>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -32,20 +47,14 @@
         <ul>
             <li>
                 <a href="index.html">
-                    <img src="party.png" alt="Party Icon" class="icon">
+                    <img src="./Memories/home.png" alt="Home Icon" class="icon">
                     <span>Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="about.html">
-                    <img src="info.png" alt="Info Icon" class="icon">
-                    <span>About</span>
                 </a>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle">
                     <span class="triangle">&#9654;</span>
-                    <img src="thanks.png" alt="Thanks Icon" class="icon">
+                    <img src="./Memories/memory.png" alt="Memory Icon" class="icon">
                     <span>Memories</span>
                 </a>
                 <ul class="dropdown-menu">
@@ -56,7 +65,7 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle">
                     <span class="triangle">&#9654;</span>
-                    <img src="thanks.png" alt="Thanks Icon" class="icon">
+                    <img src="./Memories/farewell.png" alt="Farewell Icon" class="icon">
                     <span>Farewell 2025</span>
                 </a>
                 <ul class="dropdown-menu">
@@ -65,14 +74,33 @@
                 </ul>
             </li>
         </ul>
-    </aside>
+    </aside>  
 
     <header>
-        <h1>Section B, Farewell Memories</h1>
+        <h1>Class 12, School Memories</h1>
         <p class="subtitle">A journey of a thousand memories...</p>
     </header>
 
     <main>
+        <!-- Group Photo -->
+        <section class="memory-section">
+            <div class="content-container">
+                <div class="text-container">
+                    <h2>Group Photo</h2>
+                    <p>The Group Photo of both the section as of this year.</p>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(0)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(0)">Next Image</button>
+                    </div>
+                </div>
+                <div class="photo-container">
+                    <div class="slides" id="slider-0">
+                        <img src="./Memories/Group Photo/sec A.JPG" alt="Group Photo Section A" class="active">
+                        <img src="./Memories/Group Photo/sec B.JPG" alt="Group Photo Section B">
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Good O'l Days -->
         <section class="memory-section">
@@ -80,39 +108,29 @@
                 <div class="text-container">
                     <h2>Good O'l Days</h2>
                     <p>Good old days of the school days, always hits harder than dad's belt and mom's slipper fr fr no cap.</p>
-                    <button class="show-images-btn" onclick="nextSlide(0)">Next Image</button>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(1)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(1)">Next Image</button>
+                    </div>
                 </div>
                 <div class="photo-container">
                     <div class="slides" id="slider-8">
-                        <img src="https://media.discordapp.net/attachments/1317190430055731352/1317190551858315384/Dharmendri.png?ex=675dc8cb&is=675c774b&hm=24798a65d90f20b4acdf55d8910182f848cb74c6ec1287baab948a11ed0bc6f4&=&format=webp&quality=lossless&width=674&height=359" alt="Dharmendri">
-                        <img src="https://media.discordapp.net/attachments/1317190430055731352/1317190552235675852/G1.png?ex=675dc8cb&is=675c774b&hm=da660dfed4ec97a968dd30f8bcc6534d5926b17290280d4408e62c512bf73a91&=&format=webp&quality=lossless&width=674&height=359" alt="Good O'l Days Image 1" class="active">
-                        <img src="https://media.discordapp.net/attachments/1317190430055731352/1317190552630067351/G2.png?ex=675dc8cb&is=675c774b&hm=8078f7c8ba8e1f600b4d71927d5dda3a46637840469281ccd2f7f2051273b1ac&=&format=webp&quality=lossless&width=674&height=359" alt="Good O'l Days Image 2">
-                        <img src="https://media.discordapp.net/attachments/1317190430055731352/1317190553087250452/G3.png?ex=675dc8cc&is=675c774c&hm=97521f6f0526b7bcd2a0c7e06e77ba9ca458c9f04d63da2910bbb065005774a8&=&format=webp&quality=lossless&width=674&height=359" alt="Good O'l Days Image 3">
-                        <img src="https://media.discordapp.net/attachments/1317190430055731352/1317190553393430760/G4.png?ex=675dc8cc&is=675c774c&hm=165fb5965a537ea3412dfb78e297564f36cb3461a78fbe3dfd646b7b277dc980&=&format=webp&quality=lossless&width=674&height=359" alt="Good O'l Days Image 4">
-                        <img src="https://media.discordapp.net/attachments/1317190430055731352/1317190553687035924/G5.png?ex=675dc8cc&is=675c774c&hm=616d1a6309a69f9f8357eb2790064a9f1abaff32499acd409b5177cc3a1a42cd&=&format=webp&quality=lossless&width=674&height=359" alt="Good O'l Days Image 5">
-                        <img src="https://media.discordapp.net/attachments/1317190430055731352/1317190553976180747/G6.png?ex=675dc8cc&is=675c774c&hm=afb76b2570bba4cae224be493bf57a36ce49187061daee7cd7bc0904d07119ca&=&format=webp&quality=lossless&width=674&height=359" alt="Good O'l Days Image 6">
-                        <img src="https://media.discordapp.net/attachments/1317190430055731352/1317190554408321074/G7.png?ex=675dc8cc&is=675c774c&hm=27ed22f36ebb5a6871e56004b535896ba8530ee70298fb1bb67a08cfe1183a9f&=&format=webp&quality=lossless&width=674&height=359" alt="Good O'l Days Image 7">
-                        <img src="https://media.discordapp.net/attachments/1317190430055731352/1317190583638294640/G8.png?ex=675dc8d3&is=675c7753&hm=a7fa2b8fb7c01508e7b9ecd3393050827086fce0c1db43e096423b4592e0c912&=&format=webp&quality=lossless&width=674&height=359" alt="Good O'l Days Image 8">
-                        <video src="https://media.discordapp.net/attachments/1317190430055731352/1317190584015917087/G9.mp4?ex=675dc8d3&is=675c7753&hm=53cc3c27fdb3a0ce768b4bb71feebc059923b3e567f38e4de16189b2edeb8fb7&" type="video.mp4">Your browser does not support the video tag.</video>
-                        <img src="https://media.discordapp.net/attachments/1317190430055731352/1317190584674291793/G10.png?ex=675dc8d3&is=675c7753&hm=9109725bcbacbc7e7829a5cac92cd20a0518e2da4dbf01ecbe04024e16ca9ffc&=&format=webp&quality=lossless&width=674&height=359" alt="Good O'l Days Image 10">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Golden Jubilee Inauguration -->
-        <section class="memory-section">
-            <div class="content-container">
-                <div class="text-container">
-                    <h2>Golden Jubilee Inauguration 2023</h2>
-                    <p>A monumental event marking the beginning of 50 years of excellence and cherished memories at our institution.</p>
-                    <button class="show-images-btn" onclick="nextSlide(1)">Next Image</button>
-                </div>
-                <div class="photo-container">
-                    <div class="slides" id="slider-0">
-                        <img src="GO1.jpg" alt="Golden Jubilee Image 1" class="active">
-                        <img src="Go2.jpg" alt="Golden Jubilee Image 2">
-                        <img src="GO3.jpg" alt="Golden Jubilee Image 3">
+                        <img src="./Memories/Good ol Days/Dharmendri.png" alt="Dharmendri">
+                        <img src="./Memories/Good ol Days/G1.png" alt="Good O'l Days Image 1" class="active">
+                        <img src="./Memories/Good ol Days/G2.png" alt="Good O'l Days Image 2">
+                        <img src="./Memories/Good ol Days/G3.png" alt="Good O'l Days Image 3">
+                        <img src="./Memories/Good ol Days/G4.png" alt="Good O'l Days Image 4">
+                        <img src="./Memories/Good ol Days/G5.png" alt="Good O'l Days Image 5">
+                        <img src="./Memories/Good ol Days/G6.png" alt="Good O'l Days Image 6">
+                        <img src="./Memories/Good ol Days/G7.png" alt="Good O'l Days Image 7">
+                        <img src="./Memories/Good ol Days/G8.png" alt="Good O'l Days Image 8">
+                        <video controls>
+                            <source src="./Memories/Good ol Days/G9.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="./Memories/Good ol Days/G10.png" alt="Good O'l Days Image 10">
+                        <img src="./Memories/Good ol Days/G11.png" alt="Good O'l Days Image 11">
+                        <img src="./Memories/Good ol Days/G12.jpeg" alt="Good O'l Days Image 12">
                     </div>
                 </div>
             </div>
@@ -123,15 +141,20 @@
             <div class="content-container">
                 <div class="text-container">
                     <h2>Farewell 2024</h2>
-                    <p>A heartfelt send-off for the Previous Class 12 batch, celebrating their journey and accomplishments and Sstarting off with this new batch of class 12.</p>
-                    <button class="show-images-btn" onclick="nextSlide(2)">Next Image</button>
+                    <p>A heartfelt send-off for the Previous Class 12 batch, celebrating their journey and accomplishments and starting off with this new batch of class 12.</p>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(2)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(2)">Next Image</button>
+                    </div>
                 </div>
                 <div class="photo-container">
                     <div class="slides" id="slider-1">
-                        <img src="https://media.discordapp.net/attachments/1317098933260124180/1317099025245143080/F1.png?ex=675d738e&is=675c220e&hm=fbff1a738dba518ffd523517114c49b0431243bd1bf0ac529355e2dbafb71368&=&format=webp&quality=lossless&width=674&height=359" alt="Farewell 2024 Image 1" class="active">
-                        <img src="https://media.discordapp.net/attachments/1317098933260124180/1317099025593536562/F2.png?ex=675d738e&is=675c220e&hm=e4b3cba60efefa3f3b6630728bc77a3a731325da51f2386effe081612cfe3d33&=&format=webp&quality=lossless&width=674&height=359" alt="Farewell 2024 Image 2">
-                        <img src="https://media.discordapp.net/attachments/1317098933260124180/1317099026008506428/F3.png?ex=675d738e&is=675c220e&hm=ce44aa47e1f3d43aa094597ce4051d4032d872e3917f2df93ccc3b6e43b864d5&=&format=webp&quality=lossless&width=674&height=359" alt="Farewell 2024 Image 3">
-
+                        <img src="./Memories/Farewell 2024/F1.png" alt="Farewell 2024 Image 1" class="active">
+                        <img src="./Memories/Farewell 2024/F2.png" alt="Farewell 2024 Image 2">
+                        <img src="./Memories/Farewell 2024/F3.png" alt="Farewell 2024 Image 3">
+                        <img src="./Memories/Farewell 2024/F4.jpeg" alt="Farewell 2024 Image 4">
+                        <img src="./Memories/Farewell 2024/F5.jpeg" alt="Farewell 2024 Image 5">
+                        <img src="./Memories/Farewell 2024/F6.jpeg" alt="Farewell 2024 Image 6">
                     </div>
                 </div>
             </div>
@@ -143,13 +166,22 @@
                 <div class="text-container">
                     <h2>Marian Fiesta 2024</h2>
                     <p>A vibrant celebration of talent and unity through music, dance, and joyous togetherness.</p>
-                    <button class="show-images-btn" onclick="nextSlide(3)">Next Image</button>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(3)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(3)">Next Image</button>
+                    </div>
                 </div>
                 <div class="photo-container">
                     <div class="slides" id="slider-2">
-                        <img src="https://media.discordapp.net/attachments/1317099638288814100/1317099723705811005/M1.png?ex=675d7434&is=675c22b4&hm=4e4d6b41d8a205e28c8974debeb207a25bd661eff68673f792ae7d1fbb992bf4&=&format=webp&quality=lossless&width=674&height=359" alt="Marian Fiesta Image 1" class="active">
-                        <img src="M2.jpg" alt="Marian Fiesta Image 2">
-                        <img src="M3.jpg" alt="Marian Fiesta Image 3">
+                        <img src="./Memories/Marian Fiesta/M1.png" alt="Marian Fiesta Image 1" class="active">
+                        <img src="./Memories/Marian Fiesta/M2.jpeg" alt="Marian Fiesta Image 2">
+                        <img src="./Memories/Marian Fiesta/M3.jpeg" alt="Marian Fiesta Image 3">
+                        <img src="./Memories/Marian Fiesta/M4.jpeg" alt="Marian Fiesta Image 4">
+                        <img src="./Memories/Marian Fiesta/M5.jpeg" alt="Marian Fiesta Image 5">
+                        <video controls>
+                            <source src="./Memories/Marian Fiesta/M6.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             </div>
@@ -161,12 +193,19 @@
                 <div class="text-container">
                     <h2>Exhibition 2024</h2>
                     <p>A showcase of creativity and innovation, highlighting the brilliance and ingenuity of our students.</p>
-                    <button class="show-images-btn" onclick="nextSlide(4)">Next Image</button>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(4)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(4)">Next Image</button>
+                    </div>
                 </div>
                 <div class="photo-container">
                     <div class="slides" id="slider-3">
-                        <img src="https://media.discordapp.net/attachments/1317100658603593758/1317100731232419860/EX1.png?ex=675d7524&is=675c23a4&hm=8c81908a6689db1235f80f2a1451aa9cceb6f71e1ea3ed153af5872a4ba48960&=&format=webp&quality=lossless&width=674&height=359" alt="Exhibition Image 1" class="active">
-                        <img src="https://media.discordapp.net/attachments/1317100658603593758/1317100731601391666/EX2.png?ex=675d7524&is=675c23a4&hm=59d7f792bfcbc61cab600a690025b3d3071ee9079684e97d3bc95a594501da97&=&format=webp&quality=lossless&width=674&height=359" alt="Exhibition Image 2">
+                        <img src="./Memories/Exhibition 2024/EX1.png" alt="Exhibition Image 1" class="active">
+                        <img src="./Memories/Exhibition 2024/EX2.png" alt="Exhibition Image 2">
+                        <video controls>
+                            <source src="./Memories/Exhibition 2024/EX3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             </div>
@@ -178,18 +217,25 @@
                 <div class="text-container">
                     <h2>Excursion 2024</h2>
                     <p>An adventurous and educational trip to Science City, filled with excitement and discoveries.</p>
-                    <button class="show-images-btn" onclick="nextSlide(5)">Next Image</button>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(5)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(5)">Next Image</button>
+                    </div>
                 </div>
                 <div class="photo-container">
                     <div class="slides" id="slider-4">
-                        <img src="https://media.discordapp.net/attachments/1317101634119008327/1317101712410021888/E1.png?ex=675d760e&is=675c248e&hm=4026405a0968d16ddf1c12d48d9731d64b55b6a707e0882597837df49982aa16&=&format=webp&quality=lossless&width=674&height=359" alt="Excursion Image 1" class="active">
-                        <img src="https://media.discordapp.net/attachments/1317101634119008327/1317101712754081832/E2.png?ex=675d760e&is=675c248e&hm=0cd34b2ab6f33aeb781dd2f67c940b9d0cbcea221f7b492bd79b50b17c3397ee&=&format=webp&quality=lossless&width=674&height=359" alt="Excursion Image 2">
-                        <img src="https://media.discordapp.net/attachments/1317101634119008327/1317101713454403615/E3.png?ex=675d760f&is=675c248f&hm=631c273ecf0f430069123490eaf36fde7a0bb47c81785aa5b9163b80566149ef&=&format=webp&quality=lossless&width=674&height=359" alt="Excursion Image 3">
-                        <img src="https://media.discordapp.net/attachments/1317101634119008327/1317101713827827762/E4.png?ex=675d760f&is=675c248f&hm=3f9c28bfb8467587232a55cda71e14bdf3dd595787da77553f86a7ad74691707&=&format=webp&quality=lossless&width=674&height=359" alt="Excursion Image 4">
-                        <img src="https://media.discordapp.net/attachments/1317101634119008327/1317101714268098632/E5.png?ex=675d760f&is=675c248f&hm=a7cbc66f67f314542acd20abc915e62faa8f7501623d6cb3588990ff5dca490d&=&format=webp&quality=lossless&width=674&height=359" alt="Excursion Image 5">
-                        <img src="https://media.discordapp.net/attachments/1317101634119008327/1317101714628939796/E6.png?ex=675d760f&is=675c248f&hm=0afdd8a9ab9a3829884f76ce184c9a99365629cdb1de08ccab93cf543fd60b8d&=&format=webp&quality=lossless&width=674&height=359" alt="Excursion Image 6">
-                        <img src="https://media.discordapp.net/attachments/1317101634119008327/1317101715027132476/E7.png?ex=675d760f&is=675c248f&hm=167f220b1fbaa91dd8130933077fc05364b1be055f82398d6a659716d1bf65fb&=&format=webp&quality=lossless&width=674&height=359" alt="Excursion Image 7">
-                        <img src="https://media.discordapp.net/attachments/1317101634119008327/1317101715371200562/E8.png?ex=675d760f&is=675c248f&hm=42144c9da77bbdfef541bbad14f9b3838c0b5b6d15f623a7944147554a212145&=&format=webp&quality=lossless&width=674&height=359" alt="Excursion Image 8">
+                        <img src="./Memories/Excursion 2024/E1.png" alt="Excursion Image 1" class="active">
+                        <img src="./Memories/Excursion 2024/E2.png" alt="Excursion Image 2">
+                        <img src="./Memories/Excursion 2024/E3.png" alt="Excursion Image 3">
+                        <img src="./Memories/Excursion 2024/E4.png" alt="Excursion Image 4">
+                        <img src="./Memories/Excursion 2024/E5.png" alt="Excursion Image 5">
+                        <img src="./Memories/Excursion 2024/E6.png" alt="Excursion Image 6">
+                        <img src="./Memories/Excursion 2024/E7.png" alt="Excursion Image 7">
+                        <img src="./Memories/Excursion 2024/E8.png" alt="Excursion Image 8">
+                        <video controls>
+                            <source src="/Memories/Excursion 2024/Ex9.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             </div>
@@ -201,12 +247,19 @@
                 <div class="text-container">
                     <h2>Independence Day</h2>
                     <p>A day of pride and patriotism, honoring our nation’s freedom with cultural and celebratory events.</p>
-                    <button class="show-images-btn" onclick="nextSlide(6)">Next Image</button>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(6)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(6)">Next Image</button>
+                    </div>
                 </div>
                 <div class="photo-container">
                     <div class="slides" id="slider-5">
-                        <img src="I1.jpg" alt="Independence Day Image 1" class="active">
-                        <img src="I2.jpg" alt="Independence Day Image 2">
+                        <img src="./Memories/Independence Day/I1.png" alt="Independence Day Image 1" class="active">
+                        <img src="./Memories/Independence Day/I2.png" alt="Independence Day Image 2">
+                        <img src="./Memories/Independence Day/I3.png" alt="Independence Day Image 3">
+                        <img src="./Memories/Independence Day/I4.png" alt="Independence Day Image 4">
+                        <img src="./Memories/Independence Day/I5.png" alt="Independence Day Image 5">
+                        <img src="./Memories/Independence Day/I6.png" alt="Independence Day Image 6">
                     </div>
                 </div>
             </div>
@@ -218,16 +271,24 @@
                 <div class="text-container">
                     <h2>Teachers' Day</h2>
                     <p>A tribute to our mentors, celebrating their guidance, dedication, and the difference they make in our lives.</p>
-                    <button class="show-images-btn" onclick="nextSlide(7)">Next Image</button>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(7)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(7)">Next Image</button>
+                    </div>
                 </div>
                 <div class="photo-container">
                     <div class="slides" id="slider-6">
-                        <img src="https://media.discordapp.net/attachments/1317186541323288616/1317186796001693727/T1.png?ex=675dc54c&is=675c73cc&hm=209fd687ec30728bda88cdb0412508f3fbc2f8c45d7dc48f649cddc0b13aa2dd&=&format=webp&quality=lossless&width=674&height=359" alt="Teacher's Day Image 1" class="active">
-                        <img src="https://media.discordapp.net/attachments/1317186541323288616/1317186796567662622/T2.png?ex=675dc54c&is=675c73cc&hm=de937806cbe783f33a93a31b62707a57a4a9df652ff926a18673ad85c31d575e&=&format=webp&quality=lossless&width=674&height=359" alt="Teacher's Day Image 2">
-                        <img src="https://media.discordapp.net/attachments/1317186541323288616/1317186796978962532/T3.png?ex=675dc54c&is=675c73cc&hm=ac9cb00b28d4b4e8ce600bb4a3a40aec856ca64b129e7d4dc5aa4ed755cf27c6&=&format=webp&quality=lossless&width=674&height=359" alt="Teacher's Day Image 3">
-                        <img src="https://media.discordapp.net/attachments/1317186541323288616/1317186797519765514/T4.png?ex=675dc54c&is=675c73cc&hm=4092a20f4b6f351b0bdacfa593932f66a9d9b3fa445954d85c73ea752e9f20f4&=&format=webp&quality=lossless&width=674&height=359" alt="Teacher's Day Image 4">
-                        <img src="https://media.discordapp.net/attachments/1317186541323288616/1317186798031732758/T5.png?ex=675dc54c&is=675c73cc&hm=c3ab885e55df081198b0eec8391d6eb11061052bd71fc2295188503b869806b0&=&format=webp&quality=lossless&width=674&height=359" alt="Teacher's Day Image 5">
-                        <video src="https://media.discordapp.net/attachments/1317186541323288616/1317188262741282866/T6.mp4?ex=675dc6aa&is=675c752a&hm=76936b76bd5c7be12a55eb6d6a7a1731eed3dfb7895e818f2bd4b5665b24dd11&" type="video/mp4">Your browser does not support the video tag.</video>
+                        <img src="./Memories/Teacher's Day/T1.png" alt="Teachers' Day Image 1" class="active">
+                        <img src="./Memories/Teacher's Day/T2.png" alt="Teachers' Day Image 2">
+                        <img src="./Memories/Teacher's Day/T3.png" alt="Teachers' Day Image 3">
+                        <img src="./Memories/Teacher's Day/T4.png" alt="Teachers' Day Image 4">
+                        <img src="./Memories/Teacher's Day/T5.png" alt="Teachers' Day Image 5">
+                        <video controls>
+                            <source src="./Memories/Teacher's Day/T6.mp4" type="video/mp4">
+                            <source src="./Memories/Teacher's Day/T7.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="./Memories/Teacher's Day/T8.jpeg" alt="Teachers' Day Image 8">
                     </div>
                 </div>
             </div>
@@ -239,12 +300,14 @@
                 <div class="text-container">
                     <h2>Children's Day</h2>
                     <p>A joyful celebration of childhood, filled with fun activities and lasting memories for everyone.</p>
-                    <button class="show-images-btn" onclick="nextSlide(8)">Next Image</button>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(8)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(8)">Next Image</button>
+                    </div>
                 </div>
                 <div class="photo-container">
                     <div class="slides" id="slider-7">
-                        <img src="https://media.discordapp.net/attachments/1317189404405796905/1317189513700835328/C1.png?ex=675dc7d4&is=675c7654&hm=47dde371f73bc81973f1e0846e78d06d9ac2d0532121d608a3a9be0530bf1cb8&=&format=webp&quality=lossless&width=494&height=263" alt="Children's Day Image 1" class="active">
-                        <img src="C2.jpg" alt="Children's Day Image 2">
+                        <img src="./Memories/Children's Day/C1.png" alt="Children's Day Image 1" class="active">
                     </div>
                 </div>
             </div>
@@ -256,12 +319,19 @@
                 <div class="text-container">
                     <h2>Utsarga 2024</h2>
                     <p>The grand finale of our Golden Jubilee celebration, bidding farewell with a heart full of gratitude.</p>
-                    <button class="show-images-btn" onclick="nextSlide(9)">Next Image</button>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(9)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(9)">Next Image</button>
+                    </div>
                 </div>
                 <div class="photo-container">
                     <div class="slides" id="slider-8">
-                        <img src="U1.jpg" alt="Utsarga Image 1" class="active">
-                        <img src="U2.jpg" alt="Utsarga Image 2">
+                        <img src="./Memories/Utsarga/U1.png" alt="Utsarga Image 1" class="active">
+                        <img src="./Memories/Utsarga/U2.png" alt="Utsarga Image 2">
+                        <img src="./Memories/Utsarga/U3.png" alt="Utsarga Image 3">
+                        <img src="./Memories/Utsarga/U4.png" alt="Utsarga Image 4">
+                        <img src="./Memories/Utsarga/U5.png" alt="Utsarga Image 5">
+                        <img src="./Memories/Utsarga/U6.png" alt="Utsarga Image 6">
                     </div>
                 </div>
             </div>
@@ -273,14 +343,20 @@
                 <div class="text-container">
                     <h2>Sharing Day</h2>
                     <p>A beautiful day of giving and bonding, emphasizing the joy of sharing and caring for one another.</p>
-                    <button class="show-images-btn" onclick="nextSlide(10)">Next Image</button>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(10)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(10)">Next Image</button>
+                    </div>
                 </div>
                 <div class="photo-container">
                     <div class="slides" id="slider-8">
-                        <img src="https://media.discordapp.net/attachments/1317185606866178068/1317185681264476210/S1.png?ex=675dc442&is=675c72c2&hm=554020fdea752d80d13c28a0cde2ebb234c19e53c3c616c258115d500d2e635c&=&format=webp&quality=lossless&width=674&height=359" alt="Sharing Day Image 1" class="active">
-                        <img src="https://media.discordapp.net/attachments/1317185606866178068/1317185681620996177/S2.png?ex=675dc442&is=675c72c2&hm=a706bc5b26a2a258ea7c0538d49dc52652bce05f85f36ee860156b1a8343e51f&=&format=webp&quality=lossless&width=674&height=359" alt="Sharing Day Image 2">
-                        <img src="https://media.discordapp.net/attachments/1317185606866178068/1317185682061656137/S3.png?ex=675dc442&is=675c72c2&hm=0814b098d82ff3815247344ad62dbb2e8c75a2c9c93675b1d99ada5ce2bc9270&=&format=webp&quality=lossless&width=674&height=359" alt="Sharing Day Image 3">
-                        <video src="https://media.discordapp.net/attachments/1317185606866178068/1317185682489348188/S4.mp4?ex=675dc442&is=675c72c2&hm=ab72ec5310b025f203fc9d069b0e8c3a1d24272584afadd018f608f93ddf3a4c&" type="video.mp4">Your browser does not support the video tag.</video>
+                        <img src="./Memories/Sharing Day/S1.png" alt="Sharing Day Image 1" class="active">
+                        <img src="./Memories/Sharing Day/S2.png" alt="Sharing Day Image 2">
+                        <img src="./Memories/Sharing Day/S3.png" alt="Sharing Day Image 3">
+                        <video controls>
+                            <source src="./Memories/Sharing Day/S4.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             </div>
@@ -292,14 +368,70 @@
                 <div class="text-container">
                     <h2>Khela Dhula</h2>
                     <p>We playy we win we enjoy :D</p>
-                    <button class="show-images-btn" onclick="nextSlide(11)">Next Image</button>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(11)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(11)">Next Image</button>
+                    </div>
                 </div>
                 <div class="photo-container">
                     <div class="slides" id="slider-8">
-                        <img src="https://media.discordapp.net/attachments/1317189709583351838/1317189774846726274/K1.png?ex=675dc812&is=675c7692&hm=3cd4ef191bcd60f0ddc3384a1513dd36e1697ac5b522c68cdc3fd29c1ab5210c&=&format=webp&quality=lossless&width=674&height=359" alt="Khela Dhula 1" class="active">
-                        <img src="https://media.discordapp.net/attachments/1317189709583351838/1317189775244918844/K2.png?ex=675dc812&is=675c7692&hm=acd13d460fcde1b58093927e5d86b003afd8ab6538d0a7f75161b19f0507693c&=&format=webp&quality=lossless&width=674&height=359" alt="Khela Dhula 2">
-                        <img src="https://media.discordapp.net/attachments/1317189709583351838/1317189775651770368/K3.png?ex=675dc812&is=675c7692&hm=a375cfb21941679665a8a8ef92ccc9df7daa08ada0c745b789062fad32f47611&=&format=webp&quality=lossless&width=674&height=359" alt="Khela Dhula 3">
-                        <video src="" type="video.mp4">Your browser does not support the video tag.</video>
+                        <img src="./Memories/Khela Dhula/K1.png" alt="Khela Dhula 1" class="active">
+                        <img src="./Memories/Khela Dhula/K2.png" alt="Khela Dhula 2">
+                        <img src="./Memories/Khela Dhula/K3.png" alt="Khela Dhula 3">
+                        <img src="./Memories/Khela Dhula/K4.jpeg" alt="Khela Dhula 4">
+                        <img src="./Memories/Khela Dhula/K5.jpeg" alt="Khela Dhula 5">
+                        <img src="./Memories/Khela Dhula/K6.jpeg" alt="Khela Dhula 6">
+                        <img src="./Memories/Khela Dhula/K7.jpeg" alt="Khela Dhula 7">
+                        <img src="./Memories/Khela Dhula/K8.jpeg" alt="Khela Dhula ">
+                        <img src="./Memories/Khela Dhula/K9.jpeg" alt="Khela Dhula 9">
+                        <img src="./Memories/Khela Dhula/K10.jpeg" alt="Khela Dhula 10">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUPW -->
+        <section class="memory-section">
+            <div class="content-container">
+                <div class="text-container">
+                    <h2>SUPW Works :></h2>
+                    <p>Tomra amader food without fire e kheyechile, but tomader somoy amader khete dile na. Ekhono mone ache :[</p>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(12)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(12)">Next Image</button>
+                    </div>
+                </div>
+                <div class="photo-container">
+                    <div class="slides" id="slider-8">
+                        <img src="./Memories/SUPW/SU1.jpeg" alt="SUPW Works 1" class="active">
+                        <img src="./Memories/SUPW/SU2.jpeg" alt="SUPW Works 2">
+                        <img src="./Memories/SUPW/SU3.jpeg" alt="SUPW Works 3">
+                        <img src="./Memories/SUPW/SU4.jpeg" alt="SUPW Works 4">
+                        <img src="./Memories/SUPW/SU5.jpeg" alt="SUPW Works 5">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cabinet -->
+        <section class="memory-section">
+            <div class="content-container">
+                <div class="text-container">
+                    <h2>Cabinet ceremony</h2>
+                    <p>Some glimpses of electing our school's prestigious School Parliament members.</p>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(13)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(13)">Next Image</button>
+                    </div>
+                </div>
+                <div class="photo-container">
+                    <div class="slides" id="slider-8">
+                        <img src="./Memories/Cabinet/C1.jpeg" alt="Cabinet 1" class="active">
+                        <img src="./Memories/Cabinet/C2.jpeg" alt="Cabinet 2">
+                        <img src="./Memories/Cabinet/C3.jpeg" alt="Cabinet 3">
+                        <img src="./Memories/Cabinet/C4.jpeg" alt="Cabinet 4">
+                        <img src="./Memories/Cabinet/C5.jpeg" alt="Cabinet 5">
+                        <img src="./Memories/Cabinet/C6.jpeg" alt="Cabinet 6">
                     </div>
                 </div>
             </div>

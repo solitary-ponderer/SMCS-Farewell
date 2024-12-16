@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "41": "Sagnik Kundu",
                 "42": "Saptarshi Nandi",
                 "43": "Sattwik Kundu",
-                "44": "Md. Fardeen Sk.",
+                "44": "Sk. Md. Fardeen",
                 "45": "Sk. Nayab Hussain",
                 "46": "Subhojit Ray",
                 "47": "Susmit Prasad",
@@ -197,6 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Memories Tab
+// Initialize the current index for each section
 let currentIndex = []; // Tracks the current image for each section
 
 document.querySelectorAll('.slides').forEach((slides, index) => {
@@ -204,11 +205,12 @@ document.querySelectorAll('.slides').forEach((slides, index) => {
     showSlide(index, 0); // Display the first slide for each section
 });
 
+// Function to display the slide
 function showSlide(sectionIndex, index) {
     const slides = document.querySelectorAll('.slides')[sectionIndex];
     const totalSlides = slides.children.length;
 
-    // Wrap around slides
+    // Wrap around slides when going past the last or first slide
     if (index >= totalSlides) {
         currentIndex[sectionIndex] = 0;
     } else if (index < 0) {
@@ -217,16 +219,53 @@ function showSlide(sectionIndex, index) {
         currentIndex[sectionIndex] = index;
     }
 
-    const slideWidth = slides.parentElement.offsetWidth; // Get container width
-    const offset = -currentIndex[sectionIndex] * slideWidth;
-
-    slides.style.transform = `translateX(${offset}px)`;
+    const offset = -currentIndex[sectionIndex] * 100; // Offset in percentage
+    slides.style.transform = `translateX(${offset}%)`;
 }
 
+// Function to move to the next slide
 function nextSlide(sectionIndex) {
     showSlide(sectionIndex, currentIndex[sectionIndex] + 1);
 }
 
+// Function to move to the previous slide
 function prevSlide(sectionIndex) {
     showSlide(sectionIndex, currentIndex[sectionIndex] - 1);
 }
+
+// Show the popup when the page loads
+window.onload = function () {
+    // Popup 1
+    const popupContainer = document.getElementById('popup-container');
+    const redirectButton = document.getElementById('popup-ok'); // Redirect Me button
+    const closeButton = document.getElementById('popup-close'); // Close button
+
+    if (popupContainer) {
+        // Display the popup
+        popupContainer.style.display = 'flex';
+
+        // Handle "Redirect Me" button click
+        redirectButton.addEventListener('click', () => {
+            window.open('https://www.youtube.com', '_blank'); // Open YouTube in a new tab
+        });
+
+        // Handle "Close" button click
+        closeButton.addEventListener('click', () => {
+            popupContainer.style.display = 'none'; // Hide the popup
+        });
+    }
+
+    // Popup 2
+    const popup2Container = document.getElementById('popup2-container');
+    const close2Button = document.getElementById('popup2-close'); // Close button
+
+    if (popup2Container) {
+        // Display the popup
+        popup2Container.style.display = 'flex';
+
+        // Handle "Close" button click
+        close2Button.addEventListener('click', () => {
+            popup2Container.style.display = 'none'; // Hide the popup
+        });
+    }
+};

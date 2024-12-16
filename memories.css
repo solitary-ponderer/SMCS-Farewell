@@ -370,17 +370,18 @@ header .subtitle {
 
 /* Photo Container */
 .photo-container {
+    position: relative;
+    overflow: hidden; /* Prevent any content overflow */
+    border-radius: 15px; /* Optional: rounded borders */
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    width: 100%; /* Adjust width as needed (e.g., 60%, 70%, etc.) */
-    max-width: 700px; /* Set a maximum width */
-    max-height: 400px; /* Maintain a reasonable height limit */
-    border-radius: 15px;
-    margin: auto; /* Center the container horizontally */
-    position: relative; /* Or absolute */
+    width: 100%;
+    max-width: 700px;
+    max-height: 400px;
+    margin: auto;
+    border: 5px solid #ff9800;
     left: -30px; /* Adjust this value to move it left */
     border: 5px solid #ff9800;
 }
@@ -388,26 +389,20 @@ header .subtitle {
 /* Slides */
 .slides {
     display: flex;
-    transition: transform 0.5s ease;
-    width: 100%; /* Set width to 100% to match photo container */
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* 100% of photo-container */
+    flex-shrink: 0; /* Prevent shrinking of the slides */
 }
 
-.slides img {
-    max-width: 100%; /* Ensure the image scales down if too wide */
-    max-height: 100%; /* Ensure the image scales down if too tall */
-    object-fit: cover; /* Crop the image to fill the container proportionally */
-    border-radius: 10px; /* Optional: rounded corners */
-    display: block; /* Ensure the image behaves like a block element */
-    margin: auto; /* Center the image horizontally */
-}
-
+.slides img,
 .slides video {
-    max-width: 100%; /* Ensure the image scales down if too wide */
-    max-height: 100%; /* Ensure the image scales down if too tall */
-    object-fit: cover; /* Crop the image to fill the container proportionally */
-    border-radius: 10px; /* Optional: rounded corners */
-    display: block; /* Ensure the image behaves like a block element */
-    margin: auto; /* Center the image horizontally */
+    flex: 0 0 100%; /* Each slide takes exactly 100% of the container width */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Crop proportionally without overflow */
+    margin: 0; /* Remove unwanted margins */
+    padding: 0;
+    border: none; /* Remove borders if any */
 }
 
 
@@ -422,7 +417,7 @@ footer {
 }
 
 /* Button Styling */
-.show-images-btn {
+.prev-image-btn,.next-image-btn {
     background-color: #4cae4c;
     border: none;
     color: white;
@@ -432,9 +427,10 @@ footer {
     border-radius: 5px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
     transition: background-color 0.3s ease;
+    margin: 0 5px; /* Small gap between buttons */
 }
 
-.show-images-btn:hover {
+.prev-image-btn:hover,.next-image-btn:hover {
     background-color: #7c3f00;
 }
 
@@ -495,12 +491,12 @@ footer {
         width: 100%; /* Let the paragraph take full width */
         color: rgb(255, 255, 255);
     }
-}
+
 
     /* Button Styling for Mobile */
-    .show-images-btn {
-        font-size: 1.1rem; /* Larger button text for touch devices */
-        padding: 12px 25px;
+    .prev-image-btn,.next-image-btn {
+        font-size: 1rem; /* Larger button text for touch devices */
+        padding: 10px 15px;
     }
 
     /* Header Styling */
@@ -517,4 +513,4 @@ footer {
     header .subtitle {
         font-size: 1.3rem; /* Adjust subtitle size */
     }
-
+}

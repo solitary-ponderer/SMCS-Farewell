@@ -387,7 +387,18 @@ header {
     font-size: 2.5rem;
     font-weight: bold;
     border-bottom: 5px solid #000000;
+    animation: wave 5s infinite ease-in-out;
 }
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
 main {
     height: 60vh;
     margin: auto;

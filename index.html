@@ -6,20 +6,33 @@
     <title>Farewell Invitation</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
-    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="shortcut icon" href="./favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="stylesheet" href="./popup.css">
+
+    <link rel="icon" type="image/png" href="./Favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./Favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./Favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./Favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="SMCS Farewell" />
     <link rel="manifest" href="./site.webmanifest" />
 </head>
 <body>
+    <div id="popup-container" class="popup-hidden">
+        <div class="popup">
+            <h2>Disclaimer!</h2>
+            <p>Before Navigating through the website it is suggested that
+                 you should watch the tutorial and the message from the developer.
+                 <br>Click "Redirect Me" to visit the YT tutorial or "Close" to close the popup.</p>
+            <button id="popup-ok">&#8689; Redirect Me</button>
+            <button id="popup-close">&#10006; Close</button>
+        </div>
+    </div>
+
     <nav class="nav-bar">
         <div class="hamburger-menu" id="menuToggle">
             &#9776; <!-- Hamburger Icon -->
         </div>
         <div class="icon">
-            <img src="party.png" alt="Party Icon">
+            <img src="./Memories/home.png" alt="Memory Icon">
         </div>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -32,20 +45,14 @@
         <ul>
             <li>
                 <a href="index.html">
-                    <img src="party.png" alt="Party Icon" class="icon">
+                    <img src="./Memories/home.png" alt="Home Icon" class="icon">
                     <span>Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="about.html">
-                    <img src="info.png" alt="Info Icon" class="icon">
-                    <span>About</span>
                 </a>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle">
                     <span class="triangle">&#9654;</span>
-                    <img src="thanks.png" alt="Thanks Icon" class="icon">
+                    <img src="./Memories/memory.png" alt="Memory Icon" class="icon">
                     <span>Memories</span>
                 </a>
                 <ul class="dropdown-menu">
@@ -56,7 +63,7 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle">
                     <span class="triangle">&#9654;</span>
-                    <img src="thanks.png" alt="Thanks Icon" class="icon">
+                    <img src="./Memories/farewell.png" alt="Farewell Icon" class="icon">
                     <span>Farewell 2025</span>
                 </a>
                 <ul class="dropdown-menu">
@@ -65,7 +72,7 @@
                 </ul>
             </li>
         </ul>
-    </aside>    
+    </aside>     
 
     <header>
         <div class="welcome-text">
@@ -80,8 +87,17 @@
                 <a href="teacher.html" class="button">Teacher</a>
             </div>
             <a href="principal.html" class="principal-button">The Respected Principal</a>
+
+           
         </div>
+         <video controls>
+            <source src="./Memories/Good ol Days/Principal Speech.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </main>
+
+    
+
     <footer>
         <p>© 2024-25™ Junior's Production</p>
     </footer>

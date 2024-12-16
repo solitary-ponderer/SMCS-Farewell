@@ -5,21 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memories</title>
     <link rel="stylesheet" href="./BTS.css">
-    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="shortcut icon" href="./favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="stylesheet" href="./popup.css">
+    
+    <link rel="icon" type="image/png" href="./Favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./Favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./Favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./Favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="SMCS Farewell" />
     <link rel="manifest" href="./site.webmanifest" />
 </head>
 <body>
+
+    <div id="popup2-container" class="popup2-hidden">
+        <div class="popup2">
+            <h2>Disclaimer!</h2>
+            <p>Please ignore our stupidity and brainrot. 
+                This page may take time to finish so please check back later.
+                <br>Sorry for the inconvenience.
+                 <br><br>Click "Close" to close the popup.</p>
+            
+            <button id="popup2-close">&#10006; Close</button>
+        </div>
+    </div>
 
     <nav class="nav-bar">
         <div class="hamburger-menu" id="menuToggle">
             &#9776; <!-- Hamburger Icon -->
         </div>
         <div class="icon">
-            <img src="party.png" alt="Party Icon">
+            <img src="./Memories/farewell.png" alt="Memory Icon">
         </div>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -32,20 +46,14 @@
         <ul>
             <li>
                 <a href="index.html">
-                    <img src="party.png" alt="Party Icon" class="icon">
+                    <img src="./Memories/home.png" alt="Home Icon" class="icon">
                     <span>Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="about.html">
-                    <img src="info.png" alt="Info Icon" class="icon">
-                    <span>About</span>
                 </a>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle">
                     <span class="triangle">&#9654;</span>
-                    <img src="thanks.png" alt="Thanks Icon" class="icon">
+                    <img src="./Memories/memory.png" alt="Memory Icon" class="icon">
                     <span>Memories</span>
                 </a>
                 <ul class="dropdown-menu">
@@ -56,7 +64,7 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle">
                     <span class="triangle">&#9654;</span>
-                    <img src="thanks.png" alt="Thanks Icon" class="icon">
+                    <img src="./Memories/farewell.png" alt="Farewell Icon" class="icon">
                     <span>Farewell 2025</span>
                 </a>
                 <ul class="dropdown-menu">
@@ -65,7 +73,7 @@
                 </ul>
             </li>
         </ul>
-    </aside>
+    </aside>  
 
     <header>
         <h1>Behind The Scenes [Not so Behind]</h1>
@@ -79,7 +87,10 @@
                 <div class="text-container">
                     <h2>Watch at your own Risk</h2>
                     <p>Pictures that would hit you too hard with nostalgia, Mike Tension ain't got no competition with these one.</p>
-                    <button class="show-images-btn" onclick="nextSlide(0)">Next Image</button>
+                    <div class="button-container">
+                        <button class="prev-image-btn" onclick="prevSlide(0)">Previous Image</button>
+                        <button class="next-image-btn" onclick="nextSlide(0)">Next Image</button>
+                    </div>
                 </div>
                 <div class="photo-container">
                     <div class="slides" id="slider-0">
