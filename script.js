@@ -246,7 +246,7 @@ window.onload = function () {
 
         // Handle "Redirect Me" button click
         redirectButton.addEventListener('click', () => {
-            window.open('https://www.youtube.com', '_blank'); // Open YouTube in a new tab
+            window.open('https://drive.google.com/file/d/1i0EVVBnn8X2hv-HZn5TCtGnMRnr12tl6/view?usp=sharing', '_blank'); // Open YouTube in a new tab
         });
 
         // Handle "Close" button click
@@ -263,8 +263,14 @@ window.onload = function () {
         // Display the popup
         popup2Container.style.display = 'flex';
 
+        // Set a timer to hide the popup after 5 seconds
+        const timer = setTimeout(() => {
+            popup2Container.style.display = 'none';
+        }, 5000);
+
         // Handle "Close" button click
         close2Button.addEventListener('click', () => {
+            clearTimeout(timer); // Clear the timer if the user closes manually
             popup2Container.style.display = 'none'; // Hide the popup
         });
     }
