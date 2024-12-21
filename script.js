@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "14": "Sucharita Mallick",
                 "15": "Taniya Santra",
                 "16": "Vironika Soren",
-                "17": "Abhijay Chatterjee",
+                "17": "Abhijoy Chatterjee",
                 "18": "Adarsh Thakur",
                 "19": "Adarsh Tiwari",
                 "20": "Alipta Chakraborty",
@@ -263,10 +263,10 @@ window.onload = function () {
         // Display the popup
         popup2Container.style.display = 'flex';
 
-        // Set a timer to hide the popup after 5 seconds
+        // Set a timer to hide the popup after 2.5 seconds
         const timer = setTimeout(() => {
             popup2Container.style.display = 'none';
-        }, 5000);
+        }, 1500);
 
         // Handle "Close" button click
         close2Button.addEventListener('click', () => {
@@ -275,3 +275,32 @@ window.onload = function () {
         });
     }
 };
+
+// Episode Slider
+const episodeButtons = document.querySelector('.episode-buttons');
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+
+let scrollPosition = 0;
+const buttonWidth = episodeButtons.querySelector('button').offsetWidth + 10; // Width of one button + gap
+const visibleButtons = 3; // Number of buttons visible at a time
+const scrollAmount = buttonWidth * visibleButtons;
+
+// Function to update the YouTube video in the embedded player
+function playVideo(videoId) {
+    const player = document.getElementById('video-player');
+    player.src = `https://www.youtube.com/embed/${videoId}`;
+}
+
+// Add event listeners for the previous and next buttons to scroll the slider
+prevButton.addEventListener('click', () => {
+    scrollPosition = Math.min(scrollPosition + scrollAmount, 0);
+    episodeButtons.style.transform = `translateX(${scrollPosition}px)`;
+});
+
+nextButton.addEventListener('click', () => {
+    const maxScroll = -(episodeButtons.scrollWidth - buttonWidth * visibleButtons);
+    scrollPosition = Math.max(scrollPosition - scrollAmount, maxScroll);
+    episodeButtons.style.transform = `translateX(${scrollPosition}px)`;
+});
+

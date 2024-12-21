@@ -1,0 +1,124 @@
+  .slider-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+  }
+
+  .slider-container {
+    width: 21vw; /* Width for showing 3 buttons at a time */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transform: scale(0.95); /* Scale down the entire slider to 80% */
+    transform-origin: center; /* Keep the scaling centered */
+  }
+
+  .episode-buttons {
+      display: flex; /* Flexbox layout to keep elements in one line */
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth animation */
+      gap: 10px; /* Spacing between buttons */
+      padding: 10px;
+      transform: scale(0.8); /* Scale down the entire slider to 80% */
+      transform-origin: center; /* Keep scaling centered */
+  }
+
+  .episode-buttons a {
+      text-decoration: none; /* Removes underline from links */
+  }
+
+  .episode-buttons button {
+      flex: 0 0 80px; /* Fixed width for buttons */
+      padding: 10px 15px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center; /* Centers text horizontally */
+      vertical-align: middle; /* Centers text vertically */
+      line-height: 1; /* Ensures proper spacing between lines */
+      font-size: 14px; /* Adjusts font size */
+      white-space: nowrap; /* Prevents text from wrapping */
+      transition: background 0.3s, transform 0.2s ease-in-out;
+  }
+
+  .episode-buttons button:hover {
+      background: #0056b3;
+      transform: scale(1.1); /* Slight scaling effect on hover */
+  }
+
+  .nav-button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    opacity: 0.9;
+    transition: opacity 0.3s, transform 0.2s ease-in-out;
+  }
+
+  .nav-button:hover {
+    opacity: 1;
+    transform: scale(1.1); /* Slight scaling effect on hover */
+  }
+
+  .prev-button {
+    margin-left: -20px; /* Position the button outside the frame */
+
+  }
+
+  .next-button {
+    margin-right: -60px; /* Position the button outside the frame */
+  }
+
+  /* Style for the embedded YouTube player */
+  #video-player {
+    width: 100%; /* Full width of the parent container */
+    max-width: 800px; /* Optional: Limit the maximum width */
+    height: 30vh; /* Set height proportionally */
+    border: none; /* Remove default iframe border */
+    border-radius: 8px; /* Rounded corners for better aesthetics */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    margin: 20px auto; /* Center align and add spacing */
+    display: block; /* Ensure it's treated as a block element */
+  }
+
+  @media (max-width: 768px) {
+    /* Adjust slider container width for smaller screens */
+    .slider-container {
+      width: 50vw; /* Adjust width to fit better on smaller screens */
+      transform: scale(1); /* Reset scaling to make the slider fit well */
+      margin-left: 5vw;
+      margin-right: 5vw;
+    }
+  
+    .episode-buttons {
+      transform: scale(1); /* Reset scaling to avoid too small buttons */
+      padding: 8px; /* Reduce padding inside buttons */
+      gap: 8px; /* Reduce space between buttons */
+    }
+  
+    .episode-buttons button {
+      flex: 0 0 60px; /* Decrease button width */
+      padding: 8px 12px; /* Reduce padding to make buttons smaller */
+      font-size: 12px; /* Smaller font size */
+    }
+  
+    .nav-button {
+      padding: 8px 15px; /* Adjust padding to make navigation buttons smaller */
+      font-size: 14px; /* Adjust font size */
+    }
+  
+    .prev-button, .next-button {
+      margin-left: -15px; /* Adjust position for smaller screens */
+      margin-right: -15px; /* Adjust position for smaller screens */
+    }
+  
+    /* Adjust the YouTube player for smaller screens */
+    #video-player {
+      width: 100%; /* Ensure full width */
+      height: 40vh; /* Adjust height for better proportion */
+    }
+  }

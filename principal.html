@@ -6,6 +6,7 @@
     <title>Farewell Message</title>
     <link rel="stylesheet" href="./teacher&principal.css">
     <link rel="stylesheet" href="./bubble.css">
+    <link rel="stylesheet" href="./episodebutton.css">
     
     <link rel="icon" type="image/png" href="./Favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./Favicon/favicon.svg" />
@@ -140,12 +141,32 @@
 
                     With the highest regard,<br>
                     © 2024-25™ Junior's Production<br>
-                    (On behalf of Class 11, Section B)<br>
+                    (On behalf of Class 11)<br>
                     St. Mary’s Convent School, Santragachi<br><br>
 
-                    <div class="video-container">
-                        <iframe id="farewellVideo" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                    <!-- YouTube Embed Player -->
+                    <iframe id="video-player" src="https://www.youtube.com/embed/INITIAL_VIDEO_ID" allowfullscreen></iframe>
+
+                    <!-- Slider with Episode Buttons -->
+                    <div class="slider-wrapper">
+                      <button class="nav-button prev-button" onclick="scrollSlider(-1)">Previous</button>
+                      <div class="slider-container">
+                        <div class="episode-buttons" id="slider">
+                          <button onclick="playVideo('vFRs990Zx_s')">Ep 1</button>
+                          <button onclick="playVideo('VIDEO_ID_2')">Ep 2</button>
+                          <button onclick="playVideo('VIDEO_ID_3')">Ep 3</button>
+                          <button onclick="playVideo('VIDEO_ID_4')">Ep 4</button>
+                          <button onclick="playVideo('VIDEO_ID_5')">Ep 5</button>
+                          <button onclick="playVideo('VIDEO_ID_6')">Ep 6</button>
+                          <button onclick="playVideo('VIDEO_ID_7')">Ep 7</button>
+                          <button onclick="playVideo('VIDEO_ID_8')">Ep 8</button>
+                          <button onclick="playVideo('VIDEO_ID_9')">Ep 9</button>
+                          <button onclick="playVideo('VIDEO_ID_10')">Ep 10</button>
+                        </div>
+                      </div>
+                      <button class="nav-button next-button" onclick="scrollSlider(1)">Next</button>
                     </div>
+                </div>
                 </div>
             </div>
         </main>
