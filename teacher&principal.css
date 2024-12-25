@@ -345,7 +345,7 @@ header {
 
 /* Content Box Styling */
 main {
-    overflow: auto; /* Enables scrolling if content overflows */
+    overflow-y: auto; /* Enables scrolling if content overflows */
     flex: 1;
     margin: 20px auto;
     padding: 20px;
@@ -479,7 +479,7 @@ main {
     }
 
     main {
-        overflow: auto; /* Enables scrolling if content overflows */
+        overflow-y: auto; /* Enables scrolling if content overflows */
         margin: 20px auto;
         padding: 20px;
         max-width: 1000px;
