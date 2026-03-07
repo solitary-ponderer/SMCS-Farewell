@@ -1,7 +1,20 @@
 # 🎓 SMCS Farewell Website
 
+![Project](https://img.shields.io/badge/Project-Farewell%20Website-blue)
+![HTML](https://img.shields.io/badge/HTML-5-orange)
+![CSS](https://img.shields.io/badge/CSS-3-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+
 A farewell website created for the graduating class of **St. Mary's Convent School**.  
 The project was built to celebrate memories, friendships, and the journey of the batch.
+
+---
+
+## 🌐 Live Website
+
+You can view the website here:
+
+https://solitary-ponderer.github.io/SMCS-Farewell/
 
 ---
 
@@ -23,8 +36,27 @@ The goal of the project was to create something meaningful and interactive for t
 
 ---
 
+## 📌 Purpose
+
+This project was created as a **digital farewell tribute for the graduating class of St. Mary's Convent School (SMCS)**.
+
+It was also built as a learning experience to explore **front-end web development using HTML, CSS, and JavaScript**.
+
+---
+
+## 👤 Author
+
+**Arkonil Sarkar**
+
+Student exploring **Computer Science, Artificial Intelligence, and software development**.
+
+GitHub:  
+https://github.com/solitary-ponderer
+
+---
+
 ## 🛠️ Tech Stack
 
 - HTML5  
 - CSS3
-- Java Script
+- JavaScript
