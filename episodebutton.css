@@ -61,7 +61,7 @@
 
   .nav-button:hover {
     opacity: 1;
-    transform: scale(1.1); /* Slight scaling effect on hover */
+    transform: scale(1); /* Slight scaling effect on hover */
   }
 
   .prev-button {
@@ -75,8 +75,7 @@
 
   /* Style for the embedded YouTube player */
   #video-player {
-    width: 100%; /* Full width of the parent container */
-    max-width: 800px; /* Optional: Limit the maximum width */
+    width: 30vw;
     height: 30vh; /* Set height proportionally */
     border: none; /* Remove default iframe border */
     border-radius: 8px; /* Rounded corners for better aesthetics */
@@ -88,37 +87,44 @@
   @media (max-width: 768px) {
     /* Adjust slider container width for smaller screens */
     .slider-container {
-      width: 50vw; /* Adjust width to fit better on smaller screens */
-      transform: scale(1); /* Reset scaling to make the slider fit well */
-      margin-left: 5vw;
-      margin-right: 5vw;
+      width: 40vw; /* Adjust width to fit better on smaller screens */
+      transform: scale(0.9); /* Reset scaling to make the slider fit well */
+      margin-left: 7vw;
+      margin-right: 2vw;
     }
   
     .episode-buttons {
-      transform: scale(1); /* Reset scaling to avoid too small buttons */
+      transform: scale(0.5); /* Reset scaling to avoid too small buttons */
       padding: 8px; /* Reduce padding inside buttons */
-      gap: 8px; /* Reduce space between buttons */
+      gap: 5px; /* Reduce space between buttons */
     }
   
     .episode-buttons button {
       flex: 0 0 60px; /* Decrease button width */
-      padding: 8px 12px; /* Reduce padding to make buttons smaller */
+      transform: scaleX(0.8);
+      padding: 8px 10px; /* Reduce padding to make buttons smaller */
       font-size: 12px; /* Smaller font size */
     }
   
     .nav-button {
-      padding: 8px 15px; /* Adjust padding to make navigation buttons smaller */
-      font-size: 14px; /* Adjust font size */
+      transform: scaleX(0.8);
+      padding: 10px 15px; /* Adjust padding to make navigation buttons smaller */
+      font-size: 13px; /* Adjust font size */
     }
   
-    .prev-button, .next-button {
-      margin-left: -15px; /* Adjust position for smaller screens */
-      margin-right: -15px; /* Adjust position for smaller screens */
+    .prev-button{
+      margin-left: 5px; /* Adjust position for smaller screens */
+      margin-right: -30px; /* Adjust position for smaller screens */
+    }
+
+    .next-button{
+      margin-left: -8px; /* Adjust position for smaller screens */
     }
   
     /* Adjust the YouTube player for smaller screens */
     #video-player {
-      width: 100%; /* Ensure full width */
-      height: 40vh; /* Adjust height for better proportion */
+      width: 75vw; /* Ensure full width */
+      height: 30vh; /* Adjust height for better proportion */
+      margin-left: 2vw;
     }
   }
