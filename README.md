@@ -48,10 +48,12 @@ It was also built as a learning experience to explore **front-end web developmen
 
 **Arkonil Sarkar**
 
-Student exploring **Computer Science, Artificial Intelligence, and software development**.
+ECE Student exploring **Embedded Systems, IoT and Software Development.**
 
 GitHub:  
 https://github.com/solitary-ponderer
+LinkedIn:
+https://www.linkedin.com/in/arkonilsarkar24/
 
 ---
 
