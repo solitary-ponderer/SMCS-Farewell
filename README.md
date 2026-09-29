@@ -53,7 +53,7 @@ ECE Student exploring **Embedded Systems, IoT and Software Development**
 GitHub:  
 https://github.com/solitary-ponderer
 LinkedIn:  
-[https://github.com/solitary-ponderer](https://www.linkedin.com/in/arkonilsarkar24)
+https://www.linkedin.com/in/arkonilsarkar24
 
 ---
 
